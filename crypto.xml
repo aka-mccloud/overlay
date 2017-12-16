@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<repositories version="1.0">
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>crypto</name>
+		<description>Overlay for crypto-currencies stuff</description>
+		
+		<homepage>https://github.com/aka-mccloud/overlay</homepage>
+		<owner>
+			<email>yivanov00@gmail.com</email>
+		</owner>
+		<source type="git">https://github.com/aka-mccloud/overlay.git</source>
+	</repo>
+</repositories>
