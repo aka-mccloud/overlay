@@ -42,13 +42,12 @@ src_configure() {
 	cmake-utils_src_configure
 }
 
-#src_install() {
-#	dobin ${BUILD_DIR}/karbowanec
-#	dodoc copyright
-
-#	insinto /usr/share/applications
-#	doins src/karbowanecwallet.desktop
-
-#	insinto /usr/share/pixmaps
-#	doins src/images/karbowanez.png
-#}
+src_install() {
+	dobin ${BUILD_DIR}/bin/xmr-stak
+	if use cuda; then
+		dolib ${BUILD_DIR}/bin/libxmrstak_cuda_backend.so
+	fi
+	if use opencl; then
+		dolib ${BUILD_DIR}/bin/libxmrstak_opencl_backend.so
+	fi
+}
