@@ -1,10 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 2022 Yurii Ivanov <yivanov00@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI="7"
 
-inherit cmake-utils git-r3
+inherit cmake git-r3
 
 DESCRIPTION="Audio converter based on ffmpeg"
 HOMEPAGE="https://github.com/aka-mccloud/amulet.git"

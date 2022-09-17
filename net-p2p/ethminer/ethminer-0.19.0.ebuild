@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 2022 Yurii Ivanov <yivanov00@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7

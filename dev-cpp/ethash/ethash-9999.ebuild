@@ -1,9 +1,9 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 2022 Yurii Ivanov <yivanov00@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit eutils cmake-utils
+inherit eutils cmake
 
 DESCRIPTION="C/C++ implementation of Ethash – the Ethereum Proof of Work algorithm"
 HOMEPAGE="https://github.com/chfast/ethash"
@@ -42,7 +42,7 @@ src_prepare() {
 	sed -i -e '/hunter_add_package/d' \
 		test/benchmarks/CMakeLists.txt || die
 
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
@@ -51,5 +51,5 @@ src_configure() {
 		-DETHASH_BUILD_TESTS=$(usex test)
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
