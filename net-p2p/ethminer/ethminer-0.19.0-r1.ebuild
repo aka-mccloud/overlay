@@ -1,9 +1,9 @@
 # Copyright 2022 Yurii Ivanov <yivanov00@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit cmake flag-o-matic user
+inherit cmake flag-o-matic
 
 KERNELS_DIR="opt/lib"
 
@@ -56,6 +56,7 @@ DEPEND="${RDEPEND}
 	dbus? ( virtual/pkgconfig )
 "
 BDEPEND="
+	acct-user/ethminer
 	>=dev-util/cmake-3.5
 	virtual/pkgconfig
 "
@@ -64,11 +65,6 @@ PATCHES=(
 	"${FILESDIR}/fix_byte_type.patch"
 	"${FILESDIR}/fix_ethash_includes.patch"
 )
-
-pkg_setup() {
-	enewgroup ethminer
-	enewuser ethminer -1 -1 /var/lib/ethminer ethminer
-}
 
 src_unpack() {
 	default
